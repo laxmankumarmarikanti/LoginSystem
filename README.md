@@ -4,26 +4,6 @@ A simple **console-based login and registration system** written in **C++** that
 
 ---
 
-## 📂 Project Structure
-
-```
-
-LoginSystem/
-├── CMakeLists.txt          # Build configuration
-├── build/                  # (generated after cmake ..)
-├── data/
-│   └── users.txt           # Credentials database (created at runtime)
-├── include/
-│   └── auth.h              # Function declarations
-├── src/
-│   ├── main.cpp            # Main menu system
-│   └── auth.cpp            # Registration, login, hashing logic
-└── README.md               # Documentation
-
-````
-
----
-
 ## 🚀 Features
 - Register a new user with **SHA-256 password hashing**
 - Login with username & password
@@ -39,15 +19,15 @@ LoginSystem/
 
 ### Install OpenSSL
 - **Arch Linux / Manjaro**
-  ```bash
+```bash
   sudo pacman -S openssl
 ````
 
-* **Ubuntu / Debian**
+- **Ubuntu / Debian**
 
-  ```bash
-  sudo apt-get install libssl-dev
-  ```
+```bash
+    sudo apt-get install libssl-dev
+```
 * **Windows**
 
   * Install [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html)
@@ -100,23 +80,4 @@ Login successful!
 
 * Passwords are **never stored in plain text**.
 * Uses **SHA-256 hashing (OpenSSL)**.
-* Can be extended with:
-
-  * **Salting** (per-user unique salts)
-  * **PBKDF2 / bcrypt / Argon2** for stronger protection
-  * **Database (SQLite/MySQL)** instead of text files
-
 ---
-
-## 📜 License
-
-MIT License – Free to use and modify.
-
-```
-
----
-
-✅ Now your project is clean, modular, and documented.  
-
-👉 Do you want me to also extend this to use **salted SHA-256 hashes** (store `username:salt:hash` in `users.txt`) so that even if two users choose the same password, their stored values are different?
-```
